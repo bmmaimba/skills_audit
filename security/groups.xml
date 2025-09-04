@@ -1,0 +1,17 @@
+
+<odoo>
+  <record id="group_scm_user" model="res.groups">
+    <field name="name">SCM User</field>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+  </record>
+  <record id="group_scm_manager" model="res.groups">
+    <field name="name">SCM Manager</field>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+    <field name="implied_ids" eval="[(4, ref('group_scm_user'))]"/>
+  </record>
+  <record id="group_scm_admin" model="res.groups">
+    <field name="name">SCM Admin</field>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+    <field name="implied_ids" eval="[(4, ref('group_scm_manager'))]"/>
+  </record>
+</odoo>

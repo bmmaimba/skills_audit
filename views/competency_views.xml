@@ -1,0 +1,30 @@
+
+<odoo>
+  <record id="view_competency_tree" model="ir.ui.view">
+    <field name="name">scs.competency.tree</field>
+    <field name="model">scs.competency</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="code"/>
+        <field name="name"/>
+        <field name="cluster_id"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_competency_form" model="ir.ui.view">
+    <field name="name">scs.competency.form</field>
+    <field name="model">scs.competency</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="code"/>
+            <field name="name"/>
+            <field name="cluster_id"/>
+            <field name="definition"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>
