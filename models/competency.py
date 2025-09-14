@@ -15,5 +15,5 @@ class ScsCompetency(models.Model):
 
     name = fields.Char(required=True)
     code = fields.Char(required=True, help='e.g., 1.1, 2.3')
-    cluster_id = fields.Many2one('scs.cluster', required=True, ondelete='cascade')
+    cluster_id = fields.Many2one('scs.cluster', string='Cluster', required=True, ondelete='cascade')
     definition = fields.Text()

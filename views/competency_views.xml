@@ -1,4 +1,3 @@
-
 <odoo>
   <record id="view_competency_tree" model="ir.ui.view">
     <field name="name">scs.competency.tree</field>
@@ -6,11 +5,12 @@
     <field name="arch" type="xml">
       <tree>
         <field name="code"/>
-        <field name="name"/>
         <field name="cluster_id"/>
+        <field name="name"/>
       </tree>
     </field>
   </record>
+
   <record id="view_competency_form" model="ir.ui.view">
     <field name="name">scs.competency.form</field>
     <field name="model">scs.competency</field>
@@ -27,4 +27,26 @@
       </form>
     </field>
   </record>
+
+  <record id="view_competency_search" model="ir.ui.view">
+        <field name="name">competency.search.view</field>
+        <field name="model">scs.competency</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="cluster_id"/>
+                <!-- <separator/>
+                <filter date="create_date" name="filter_create_date" string="Create Date"/>
+                <filter date="update_date" name="filter_update_date" string="Update Date"/>
+                <separator/>
+                <filter string="My Competencies" name="my_competencies_filter"
+                    domain="['|', ('cluster_id', '=', uid), ('create_uid', '=', uid)]"/>
+                <filter string="Cluster" name="groupby_cluster_id"
+                        context="{'group_by':'cluster_id'}" domain="[]"/>
+                <filter string="Creation Date" name="groupby_create_date"
+                        context="{'group_by':'create_date'}" domain="[]"/> -->
+            </search>
+        </field>
+    </record>
+
 </odoo>

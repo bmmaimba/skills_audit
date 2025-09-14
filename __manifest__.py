@@ -24,6 +24,7 @@
         'views/training_views.xml',
         'views/wizard_views.xml',
     ],
+    'images': ['static/description/icon.png'],
     'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
