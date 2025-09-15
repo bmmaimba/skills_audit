@@ -14,38 +14,38 @@
             name="Skills Audit Operations"
             parent="menu_scs_root"
             sequence="30"/>
-          <menuitem id="menu_profiles"
-                    name="Skills Audit Employee Profiles"
-                    parent="menu_scs_operations"
-                    action="action_profiles"/>
-          <menuitem id="menu_assessments"
-                    name="Skills Audit Assessments"
-                    parent="menu_scs_operations"
-                    action="action_assessments"/>
-          <menuitem id="menu_training"
-                    name="Skills Audit Training Actions"
-                    parent="menu_scs_operations"
-                    action="action_training"/>
+  <menuitem id="menu_profiles"
+            name="Skills Audit Employee Profiles"
+            parent="menu_scs_operations"
+            action="action_profiles"/>
+  <menuitem id="menu_assessments"
+            name="Skills Audit Assessments"
+            parent="menu_scs_operations"
+            action="action_assessments"/>
+  <menuitem id="menu_training"
+            name="Skills Audit Training Actions"
+            parent="menu_scs_operations"
+            action="action_training"/>
 
   <menuitem id="menu_scs_config"
             name="Configuration"
             parent="menu_scs_root"
             sequence="90"/>
-          <menuitem id="menu_roles"
-                    name="Skills Audit Job Roles"
-                    parent="menu_scs_config"
-                    action="action_roles"
-                    sequence="1"/>
-          <menuitem id="menu_clusters"
-                    name="Skills Audit Clusters"
-                    parent="menu_scs_config"
-                    action="action_clusters"
-                    sequence="2"/>
-          <menuitem id="menu_competencies"
-                    name="Skills Audit Competencies"
-                    parent="menu_scs_config"
-                    action="action_competencies"
-                    sequence="3"/>
+  <menuitem id="menu_roles"
+            name="Skills Audit Job Roles"
+            parent="menu_scs_config"
+            action="action_roles"
+            sequence="1"/>
+  <menuitem id="menu_clusters"
+            name="Skills Audit Clusters"
+            parent="menu_scs_config"
+            action="action_clusters"
+            sequence="2"/>
+  <menuitem id="menu_competencies"
+            name="Skills Audit Competencies"
+            parent="menu_scs_config"
+            action="action_competencies"
+            sequence="3"/>
 
   <record id="action_clusters" model="ir.actions.act_window">
     <field name="name">Skills Audit Clusters</field>
@@ -62,7 +62,6 @@
     <field name="name">Skills Audit Competencies</field>
     <field name="res_model">scs.competency</field>
     <field name="view_mode">tree,form</field>
-    <!-- <field name="context">{'search_default_groupby_cluster_id': 1}</field> -->
   </record>
 
   <record id="action_roles" model="ir.actions.act_window">
