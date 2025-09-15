@@ -34,17 +34,15 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
+                <separator/>
                 <field name="cluster_id"/>
-                <!-- <separator/>
-                <filter date="create_date" name="filter_create_date" string="Create Date"/>
-                <filter date="update_date" name="filter_update_date" string="Update Date"/>
+                <!-- <filter date="create_date" name="filter_create_date" string="Create Date"/> -->
+                <!-- <filter date="update_date" name="filter_update_date" string="Update Date"/> -->
                 <separator/>
                 <filter string="My Competencies" name="my_competencies_filter"
                     domain="['|', ('cluster_id', '=', uid), ('create_uid', '=', uid)]"/>
                 <filter string="Cluster" name="groupby_cluster_id"
                         context="{'group_by':'cluster_id'}" domain="[]"/>
-                <filter string="Creation Date" name="groupby_create_date"
-                        context="{'group_by':'create_date'}" domain="[]"/> -->
             </search>
         </field>
     </record>
