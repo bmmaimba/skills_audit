@@ -4,15 +4,17 @@
     <field name="name">scs.training.action.tree</field>
     <field name="model">scs.training.action</field>
     <field name="arch" type="xml">
-      <tree>
+      <tree editable="top">
         <field name="name"/>
         <field name="employee_id"/>
         <field name="competency_id"/>
+        <field name="training_actions_employee_profile_id"/>
         <field name="state"/>
         <field name="suggested"/>
       </tree>
     </field>
   </record>
+
   <record id="view_training_form" model="ir.ui.view">
     <field name="name">scs.training.action.form</field>
     <field name="model">scs.training.action</field>

@@ -165,7 +165,11 @@
                      Alternatively you may reference scs.training.action via a dedicated relation. -->
                 <tree>
                   <field name="name"/>
+                  <!-- <field name="employee_id"/> -->
+                  <field name="competency_id"/>
+                  <!-- <field name="training_actions_employee_profile_id"/> -->
                   <field name="state"/>
+                  <field name="suggested"/>
                   <field name="create_date"/>
                 </tree>
               </field>
