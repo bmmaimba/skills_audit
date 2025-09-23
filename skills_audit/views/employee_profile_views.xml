@@ -106,11 +106,22 @@
 
             <page string="Assessments">
               <field name="assessment_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="state"/>
+                  <field name="create_date"/>
+                </tree>
+              </field>
+            </page>
+
+            <!-- <page string="Assessments">
+              <field name="assessment_ids">
                 <tree string="Assessments" editable="bottom">
                   <field name="name"/>
                   <field name="state"/>
                   <field name="create_date"/>
                 </tree>
+
                 <kanban>
                   <templates>
                     <t t-name="kanban-box">
@@ -124,6 +135,7 @@
                     </t>
                   </templates>
                 </kanban>
+
                 <form string="Assessment">
                   <sheet>
                     <group>
@@ -145,7 +157,7 @@
                   </sheet>
                 </form>
               </field>
-            </page>
+            </page> -->
 
             <page string="Training Actions">
               <field name="training_actions_ids" nolabel="1" delete="1">
