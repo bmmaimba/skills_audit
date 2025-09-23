@@ -9,6 +9,7 @@ class ScsTrainingAction(models.Model):
     name = fields.Char(required=True)
     employee_id = fields.Many2one('hr.employee', required=True)
     competency_id = fields.Many2one('scs.competency', required=True)
+    training_actions_employee_profile_id = fields.Many2one('scs.employee.profile', string='Employee Profile', ondelete='cascade')
     state = fields.Selection([
         ('draft','Draft'),
         ('in_progress','In Progress'),

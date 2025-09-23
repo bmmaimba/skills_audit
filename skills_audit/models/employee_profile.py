@@ -12,6 +12,7 @@ class ScsEmployeeProfile(models.Model):
 
     requirement_ids = fields.One2many('scs.role.requirement', compute='_compute_requirements', string='Requirements', store=False)
     assessment_ids = fields.One2many('scs.assessment', 'profile_id', string='Assessments')
+    training_actions_ids = fields.One2many('scs.training.action', 'training_actions_employee_profile_id', string='Training Actions', store=True)
 
     total_competencies = fields.Integer(compute='_compute_kpis', store=True)
     met_count = fields.Integer(compute='_compute_kpis', store=True)
@@ -75,6 +76,7 @@ class ScsEmployeeProfile(models.Model):
                 self.env['scs.training.action'].sudo().create({
                     'employee_id': self.employee_id.id,
                     'competency_id': line.competency_id.id,
+                    'training_actions_employee_profile_id': self.id,
                     'state': 'draft',
                     'name': _('Training for %s') % (line.competency_id.name,),
                     'suggested': True,
