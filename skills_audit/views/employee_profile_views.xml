@@ -22,19 +22,18 @@
     <field name="arch" type="xml">
       <form string="Employee Profile" class="o_form_full">
         <header>
-          <button name="action_create_assessment"
+          <!-- <button name="action_create_assessment"
                   type="object"
                   string="New Assessment"
                   class="btn-primary oe_highlight"/>
           <button name="action_generate_training_suggestions"
                   type="object"
                   string="Suggest Training"
-                  class="btn-primary"/>
+                  class="btn-primary"/> -->
           <button name="%(action_report_profile)d"
                   type="action"
                   string="Print Gap Report"
                   class="btn-primary"/>
-          <!-- You can add more action buttons here if needed -->
         </header>
 
         <sheet>
@@ -105,6 +104,12 @@
             </page> -->
 
             <page string="Assessments">
+              <group>
+                <button name="action_create_assessment"
+                        type="object"
+                        string="New Assessment"
+                        class="btn-primary oe_highlight"/>
+                </group>
               <field name="assessment_ids">
                 <tree>
                   <field name="name"/>
@@ -160,6 +165,12 @@
             </page> -->
 
             <page string="Training Actions">
+              <group>
+                <button name="action_generate_training_suggestions"
+                        type="object"
+                        string="Suggest Training"
+                        class="btn-primary"/>
+              </group>
               <field name="training_actions_ids" nolabel="1" delete="1">
                 <!-- We reuse assessment lines to display suggested training if needed.
                      Alternatively you may reference scs.training.action via a dedicated relation. -->
@@ -173,14 +184,10 @@
                   <field name="create_date"/>
                 </tree>
               </field>
-              <!-- <group>
-                <button name="action_generate_training_suggestions" type="object" string="Generate Suggested Training" class="btn-primary"/>
-              </group> -->
             </page>
 
           </notebook>
         </sheet>
-
         <div class="oe_chatter">
           <field name="message_follower_ids"/>
           <field name="activity_ids"/>

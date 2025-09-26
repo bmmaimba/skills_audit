@@ -4,6 +4,7 @@ from odoo import models, fields
 class ScsJobRole(models.Model):
     _name = 'scs.job.role'
     _description = 'SCM Job Role'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(required=True)
     requirement_ids = fields.One2many('scs.role.requirement', 'role_id', string='Competency Requirements')

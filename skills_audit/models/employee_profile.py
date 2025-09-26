@@ -1,4 +1,3 @@
-
 from odoo import models, fields, api, _
 
 class ScsEmployeeProfile(models.Model):
@@ -50,7 +49,8 @@ class ScsEmployeeProfile(models.Model):
                     met += 1
             rec.met_count = met
             rec.gap_count = max(len(reqs) - met, 0)
-            rec.gap_percent = (100.0 * rec.gap_count / len(reqs)) if reqs else 0.0
+            # store as fraction so widget="percentage" in views works correctly
+            rec.gap_percent = (rec.gap_count / len(reqs)) if reqs else 0.0
 
     def action_create_assessment(self):
         self.ensure_one()
@@ -62,6 +62,7 @@ class ScsEmployeeProfile(models.Model):
             'res_model': 'scs.assessment',
             'view_mode': 'form',
             'res_id': assess.id,
+            'target': 'new',  # This opens the form in a popup/modal window
         }
 
     def action_generate_training_suggestions(self):

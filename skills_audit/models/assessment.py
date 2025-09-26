@@ -15,8 +15,13 @@ class ScsAssessment(models.Model):
     _name = 'scs.assessment'
     _description = 'SCM Assessment'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = 'id desc'
 
-    name = fields.Char(default=lambda self: _('SCM Assessment'))
+
+    name = fields.Char(compute='_compute_name', store=True)
+    # name = fields.Char(default=_compute_name, store=True)
+    # name = fields.Char(default=lambda self: _('SCM Assessment'), compute='_compute_name', store=True)
+    # name = fields.Char(default=lambda self: _('SCM Assessment'))
     profile_id = fields.Many2one('scs.employee.profile', required=True)
     employee_id = fields.Many2one(related='profile_id.employee_id', store=True)
     role_id = fields.Many2one(related='profile_id.role_id', store=True)
@@ -48,6 +53,11 @@ class ScsAssessment(models.Model):
                     'required_level': r.required_level,
                 }))
             rec.line_ids = lines
+
+    @api.depends('employee_id', 'role_id')
+    def _compute_name(self):
+        for rec in self:
+            rec.name = '%s - %s - SCM Assessment' % (rec.employee_id.name or '', rec.role_id.name or '')
 
     @api.model
     def _cron_remind_pending(self):

@@ -12,6 +12,7 @@ class ScsCompetency(models.Model):
     _name = 'scs.competency'
     _description = 'SCM Competency'
     _order = 'code'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(required=True)
     code = fields.Char(required=True, help='e.g., 1.1, 2.3')
